@@ -123,4 +123,14 @@ Street
 City, State Zip
 </value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="SubmitButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>380, 464</value>
+  </data>
+  <data name="ExitButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>810, 464</value>
+  </data>
+  <data name="ClearButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>595, 464</value>
+  </data>
 </root>
