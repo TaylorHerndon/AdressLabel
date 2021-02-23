@@ -11,20 +11,20 @@ Public Class AdressLabelGenerator
 
     Sub SubmitButtonPress() Handles SubmitButton.Click
 
-        Dim HasProblem(6) As Boolean
+        Dim hasProblem(6) As Boolean
 
         'Check to see if any of the folling text boxes contain a number and store the results in an array and message
-        HasProblem(6) = CheckString(FirstNameTextBox.Text, "First Name")
-        HasProblem(5) = CheckString(MITextBox.Text, "Middle Inital")
-        HasProblem(4) = CheckString(LastNameTextBox.Text, "Last Name")
-        HasProblem(2) = CheckString(CityTextBox.Text, "City")
-        HasProblem(1) = CheckString(StateTextBox.Text, "State")
+        hasProblem(6) = CheckString(FirstNameTextBox.Text, "First Name")
+        hasProblem(5) = CheckString(MITextBox.Text, "Middle Inital")
+        hasProblem(4) = CheckString(LastNameTextBox.Text, "Last Name")
+        hasProblem(2) = CheckString(CityTextBox.Text, "City")
+        hasProblem(1) = CheckString(StateTextBox.Text, "State")
 
         'Check to see if the street adress text box is empty and store the results in an array and message
         If StreetAdressTextBox.Text = "" Then
 
             StoreMessage("Street Adress", False)
-            HasProblem(3) = True
+            hasProblem(3) = True
 
         End If
 
@@ -36,7 +36,7 @@ Public Class AdressLabelGenerator
         Catch ex As Exception
 
             'If ZipCode cannot be converted to an integer there is a problem.
-            HasProblem(0) = True
+            hasProblem(0) = True
 
             'Check to see if Zip Code is empty and store the correct response.
             If ZipCodeTextBox.Text = "" Then
@@ -60,7 +60,7 @@ Public Class AdressLabelGenerator
             'Set the focus to the top most field that has a problem
             For i = 0 To 6
 
-                If HasProblem(i) Then
+                If hasProblem(i) Then
 
                     Select Case i
                         Case 0
@@ -116,30 +116,30 @@ Public Class AdressLabelGenerator
 
     End Sub
 
-    Function CheckString(CheckThisString As String, TestedField As String) As Boolean
+    Function CheckString(checkThisString As String, testedField As String) As Boolean
 
-        Dim StringLength As Integer
-        Dim HasNumber As Boolean = False
+        Dim stringLength As Integer
+        Dim hasNumber As Boolean = False
 
         'Gets the length of the string in question
-        StringLength = Len(CheckThisString)
+        stringLength = Len(checkThisString)
 
         'If the string is empty then return "Empty"
-        If CheckThisString = "" Then
+        If checkThisString = "" Then
 
-            StoreMessage(TestedField & " is empty.", False)
+            StoreMessage(testedField & " is empty.", False)
             Return True
 
         Else
 
             'If the string is not empty test if each character is a number
-            For i = 0 To StringLength - 1
+            For i = 0 To stringLength - 1
 
                 Try
 
-                    Convert.ToInt32(CheckThisString.Substring(i, 1)) 'Test the character
-                    HasNumber = True 'If the code continues then the tested character is a number
-                    StoreMessage(TestedField, False) 'Store what field has a problem
+                    Convert.ToInt32(checkThisString.Substring(i, 1)) 'Test the character
+                    hasNumber = True 'If the code continues then the tested character is a number
+                    StoreMessage(testedField, False) 'Store what field has a problem
                     Return True
 
                 Catch ex As Exception
@@ -151,33 +151,33 @@ Public Class AdressLabelGenerator
         End If
 
         'Return whether or not the tested string has a number in it
-        Return HasNumber
+        Return hasNumber
 
     End Function
 
     Function StoreMessage(Message As String, Clear As Boolean) As String
 
-        Static StoredMessages As String
+        Static storedMessages As String
 
         'If clear is true reset stored messages
         If Clear Then
 
-            StoredMessages = ""
-            Return StoredMessages
+            storedMessages = ""
+            Return storedMessages
 
         End If
 
         'If message is empty then return the stored messages and continue
         If Message = "" Then
 
-            Return StoredMessages
+            Return storedMessages
 
         End If
 
         'Add the new message to the StoredMessages String
-        StoredMessages = StoredMessages & vbNewLine & Message
+        storedMessages = storedMessages & vbNewLine & Message
 
-        Return StoredMessages
+        Return storedMessages
 
     End Function
 
