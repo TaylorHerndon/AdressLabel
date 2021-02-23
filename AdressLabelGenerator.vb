@@ -9,30 +9,34 @@ Option Explicit On
 
 Public Class AdressLabelGenerator
 
-    Sub SubmitButtonPress() Handles SubmitButton.MouseDown
+    Sub SubmitButtonPress() Handles SubmitButton.Click
 
-        'Check to see if any of the folling text boxes contain a number or are empty
-        CheckString(FirstNameTextBox.Text, "First Name")
-        CheckString(MITextBox.Text, "Middle Inital")
-        CheckString(LastNameTextBox.Text, "Last Name")
-        CheckString(CityTextBox.Text, "City")
-        CheckString(StateTextBox.Text, "State")
+        Dim HasProblem(6) As Boolean
 
-        'Check to see if the street adress text box is empty
+        'Check to see if any of the folling text boxes contain a number and store the results in an array and message
+        HasProblem(6) = CheckString(FirstNameTextBox.Text, "First Name")
+        HasProblem(5) = CheckString(MITextBox.Text, "Middle Inital")
+        HasProblem(4) = CheckString(LastNameTextBox.Text, "Last Name")
+        HasProblem(2) = CheckString(CityTextBox.Text, "City")
+        HasProblem(1) = CheckString(StateTextBox.Text, "State")
+
+        'Check to see if the street adress text box is empty and store the results in an array and message
         If StreetAdressTextBox.Text = "" Then
 
             StoreMessage("Street Adress", False)
+            HasProblem(3) = True
 
         End If
 
-        'Check to see if the zipcode text box contains only numbers
+        'Check to see if the zipcode text box contains only numbers and store the results in an array and message
         Try
-            'Try to conver to integer
+            'Try to convert to integer
             Convert.ToInt32(ZipCodeTextBox.Text)
 
         Catch ex As Exception
 
             'If ZipCode cannot be converted to an integer there is a problem.
+            HasProblem(0) = True
 
             'Check to see if Zip Code is empty and store the correct response.
             If ZipCodeTextBox.Text = "" Then
@@ -52,6 +56,33 @@ Public Class AdressLabelGenerator
 
             MsgBox("An error occoured in the following fields." & vbNewLine & StoreMessage("", False))
             StoreMessage("", True)
+
+            'Set the focus to the top most field that has a problem
+            For i = 0 To 6
+
+                If HasProblem(i) Then
+
+                    Select Case i
+                        Case 0
+                            ZipCodeTextBox.Focus()
+                        Case 1
+                            StateTextBox.Focus()
+                        Case 2
+                            CityTextBox.Focus()
+                        Case 3
+                            StreetAdressTextBox.Focus()
+                        Case 4
+                            LastNameTextBox.Focus()
+                        Case 5
+                            MITextBox.Focus()
+                        Case 6
+                            FirstNameTextBox.Focus()
+                    End Select
+
+                End If
+
+            Next
+
             Exit Sub
 
         End If
@@ -79,16 +110,16 @@ Public Class AdressLabelGenerator
 
     End Sub
 
-    Sub ExitButtonClick() Handles ExitButton.MouseDown
+    Sub ExitButtonClick() Handles ExitButton.Click
 
         End
 
     End Sub
 
-    Function CheckString(CheckThisString As String, TestedField As String) As String
+    Function CheckString(CheckThisString As String, TestedField As String) As Boolean
 
         Dim StringLength As Integer
-        Dim HasNumber As String = "False"
+        Dim HasNumber As Boolean = False
 
         'Gets the length of the string in question
         StringLength = Len(CheckThisString)
@@ -97,7 +128,7 @@ Public Class AdressLabelGenerator
         If CheckThisString = "" Then
 
             StoreMessage(TestedField & " is empty.", False)
-            Return "Empty"
+            Return True
 
         Else
 
@@ -107,8 +138,9 @@ Public Class AdressLabelGenerator
                 Try
 
                     Convert.ToInt32(CheckThisString.Substring(i, 1)) 'Test the character
-                    HasNumber = "True" 'If the code continues then the tested character is a number
+                    HasNumber = True 'If the code continues then the tested character is a number
                     StoreMessage(TestedField, False) 'Store what field has a problem
+                    Return True
 
                 Catch ex As Exception
 
