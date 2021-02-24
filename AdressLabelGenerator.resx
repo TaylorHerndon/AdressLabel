@@ -185,6 +185,12 @@ Street
 City State, Zip
 </value>
   </data>
+  <metadata name="InputAdress.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="AdressLabel.ToolTip" xml:space="preserve">
+    <value>Your adress label will be displayed here.</value>
+  </data>
   <data name="&gt;&gt;AdressLabel.Name" xml:space="preserve">
     <value>AdressLabel</value>
   </data>
@@ -227,6 +233,9 @@ City State, Zip
   <data name="&gt;&gt;Label8.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <metadata name="SubmissionButtons.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>176, 17</value>
+  </metadata>
   <data name="SubmitButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>Rockwell, 14pt, style=Bold</value>
   </data>
@@ -241,6 +250,10 @@ City State, Zip
   </data>
   <data name="SubmitButton.Text" xml:space="preserve">
     <value>SUBMIT</value>
+  </data>
+  <data name="SubmitButton.ToolTip" xml:space="preserve">
+    <value>Press to format your mailing adress into an
+adress label!</value>
   </data>
   <data name="&gt;&gt;SubmitButton.Name" xml:space="preserve">
     <value>SubmitButton</value>
@@ -269,6 +282,9 @@ City State, Zip
   <data name="ExitButton.Text" xml:space="preserve">
     <value>EXIT</value>
   </data>
+  <data name="ExitButton.ToolTip" xml:space="preserve">
+    <value>Press to exit the program</value>
+  </data>
   <data name="&gt;&gt;ExitButton.Name" xml:space="preserve">
     <value>ExitButton</value>
   </data>
@@ -295,6 +311,9 @@ City State, Zip
   </data>
   <data name="ClearButton.Text" xml:space="preserve">
     <value>CLEAR</value>
+  </data>
+  <data name="ClearButton.ToolTip" xml:space="preserve">
+    <value>Press to clear your mailing adress.</value>
   </data>
   <data name="&gt;&gt;ClearButton.Name" xml:space="preserve">
     <value>ClearButton</value>
@@ -344,6 +363,9 @@ City State, Zip
   <data name="LastNameTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
+  <data name="LastNameTextBox.ToolTip" xml:space="preserve">
+    <value>Input Last Name</value>
+  </data>
   <data name="&gt;&gt;LastNameTextBox.Name" xml:space="preserve">
     <value>LastNameTextBox</value>
   </data>
@@ -364,6 +386,9 @@ City State, Zip
   </data>
   <data name="StreetAdressTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
+  </data>
+  <data name="StreetAdressTextBox.ToolTip" xml:space="preserve">
+    <value>Input your street adress</value>
   </data>
   <data name="&gt;&gt;StreetAdressTextBox.Name" xml:space="preserve">
     <value>StreetAdressTextBox</value>
@@ -386,6 +411,9 @@ City State, Zip
   <data name="CityTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
+  <data name="CityTextBox.ToolTip" xml:space="preserve">
+    <value>Input your city</value>
+  </data>
   <data name="&gt;&gt;CityTextBox.Name" xml:space="preserve">
     <value>CityTextBox</value>
   </data>
@@ -406,6 +434,9 @@ City State, Zip
   </data>
   <data name="StateTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
+  </data>
+  <data name="StateTextBox.ToolTip" xml:space="preserve">
+    <value>Input your state</value>
   </data>
   <data name="&gt;&gt;StateTextBox.Name" xml:space="preserve">
     <value>StateTextBox</value>
@@ -428,6 +459,9 @@ City State, Zip
   <data name="ZipCodeTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
+  <data name="ZipCodeTextBox.ToolTip" xml:space="preserve">
+    <value>Input your zip code</value>
+  </data>
   <data name="&gt;&gt;ZipCodeTextBox.Name" xml:space="preserve">
     <value>ZipCodeTextBox</value>
   </data>
@@ -448,6 +482,9 @@ City State, Zip
   </data>
   <data name="FirstNameTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="FirstNameTextBox.ToolTip" xml:space="preserve">
+    <value>Input First Name</value>
   </data>
   <data name="&gt;&gt;FirstNameTextBox.Name" xml:space="preserve">
     <value>FirstNameTextBox</value>
@@ -496,6 +533,9 @@ City State, Zip
   </data>
   <data name="MITextBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="MITextBox.ToolTip" xml:space="preserve">
+    <value>Input Middle Initial</value>
   </data>
   <data name="&gt;&gt;MITextBox.Name" xml:space="preserve">
     <value>MITextBox</value>
@@ -674,6 +714,9 @@ City State, Zip
   <data name="&gt;&gt;Label7.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="SubmissionButtons.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>176, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -685,6 +728,18 @@ City State, Zip
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Adress Label Generator</value>
+  </data>
+  <data name="&gt;&gt;InputAdress.Name" xml:space="preserve">
+    <value>InputAdress</value>
+  </data>
+  <data name="&gt;&gt;InputAdress.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SubmissionButtons.Name" xml:space="preserve">
+    <value>SubmissionButtons</value>
+  </data>
+  <data name="&gt;&gt;SubmissionButtons.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>AdressLabelGenerator</value>

@@ -22,6 +22,7 @@ Partial Class AdressLabelGenerator
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AdressLabelGenerator))
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.AdressLabel = New System.Windows.Forms.Label()
@@ -44,6 +45,8 @@ Partial Class AdressLabelGenerator
         Me.Label6 = New System.Windows.Forms.Label()
         Me.MailingAdress = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.InputAdress = New System.Windows.Forms.ToolTip(Me.components)
+        Me.SubmissionButtons = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -58,6 +61,7 @@ Partial Class AdressLabelGenerator
         '
         resources.ApplyResources(Me.AdressLabel, "AdressLabel")
         Me.AdressLabel.Name = "AdressLabel"
+        Me.InputAdress.SetToolTip(Me.AdressLabel, resources.GetString("AdressLabel.ToolTip"))
         '
         'Label8
         '
@@ -68,18 +72,22 @@ Partial Class AdressLabelGenerator
         '
         resources.ApplyResources(Me.SubmitButton, "SubmitButton")
         Me.SubmitButton.Name = "SubmitButton"
+        Me.SubmissionButtons.SetToolTip(Me.SubmitButton, resources.GetString("SubmitButton.ToolTip"))
         Me.SubmitButton.UseVisualStyleBackColor = True
         '
         'ExitButton
         '
+        Me.ExitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
         resources.ApplyResources(Me.ExitButton, "ExitButton")
         Me.ExitButton.Name = "ExitButton"
+        Me.SubmissionButtons.SetToolTip(Me.ExitButton, resources.GetString("ExitButton.ToolTip"))
         Me.ExitButton.UseVisualStyleBackColor = True
         '
         'ClearButton
         '
         resources.ApplyResources(Me.ClearButton, "ClearButton")
         Me.ClearButton.Name = "ClearButton"
+        Me.SubmissionButtons.SetToolTip(Me.ClearButton, resources.GetString("ClearButton.ToolTip"))
         Me.ClearButton.UseVisualStyleBackColor = True
         '
         'Label1
@@ -91,31 +99,37 @@ Partial Class AdressLabelGenerator
         '
         resources.ApplyResources(Me.LastNameTextBox, "LastNameTextBox")
         Me.LastNameTextBox.Name = "LastNameTextBox"
+        Me.InputAdress.SetToolTip(Me.LastNameTextBox, resources.GetString("LastNameTextBox.ToolTip"))
         '
         'StreetAdressTextBox
         '
         resources.ApplyResources(Me.StreetAdressTextBox, "StreetAdressTextBox")
         Me.StreetAdressTextBox.Name = "StreetAdressTextBox"
+        Me.InputAdress.SetToolTip(Me.StreetAdressTextBox, resources.GetString("StreetAdressTextBox.ToolTip"))
         '
         'CityTextBox
         '
         resources.ApplyResources(Me.CityTextBox, "CityTextBox")
         Me.CityTextBox.Name = "CityTextBox"
+        Me.InputAdress.SetToolTip(Me.CityTextBox, resources.GetString("CityTextBox.ToolTip"))
         '
         'StateTextBox
         '
         resources.ApplyResources(Me.StateTextBox, "StateTextBox")
         Me.StateTextBox.Name = "StateTextBox"
+        Me.InputAdress.SetToolTip(Me.StateTextBox, resources.GetString("StateTextBox.ToolTip"))
         '
         'ZipCodeTextBox
         '
         resources.ApplyResources(Me.ZipCodeTextBox, "ZipCodeTextBox")
         Me.ZipCodeTextBox.Name = "ZipCodeTextBox"
+        Me.InputAdress.SetToolTip(Me.ZipCodeTextBox, resources.GetString("ZipCodeTextBox.ToolTip"))
         '
         'FirstNameTextBox
         '
         resources.ApplyResources(Me.FirstNameTextBox, "FirstNameTextBox")
         Me.FirstNameTextBox.Name = "FirstNameTextBox"
+        Me.InputAdress.SetToolTip(Me.FirstNameTextBox, resources.GetString("FirstNameTextBox.ToolTip"))
         '
         'Label2
         '
@@ -126,6 +140,7 @@ Partial Class AdressLabelGenerator
         '
         resources.ApplyResources(Me.MITextBox, "MITextBox")
         Me.MITextBox.Name = "MITextBox"
+        Me.InputAdress.SetToolTip(Me.MITextBox, resources.GetString("MITextBox.ToolTip"))
         '
         'Label3
         '
@@ -156,6 +171,18 @@ Partial Class AdressLabelGenerator
         '
         resources.ApplyResources(Me.Label7, "Label7")
         Me.Label7.Name = "Label7"
+        '
+        'InputAdress
+        '
+        Me.InputAdress.AutoPopDelay = 2000
+        Me.InputAdress.InitialDelay = 500
+        Me.InputAdress.ReshowDelay = 100
+        '
+        'SubmissionButtons
+        '
+        Me.SubmissionButtons.AutoPopDelay = 2000
+        Me.SubmissionButtons.InitialDelay = 500
+        Me.SubmissionButtons.ReshowDelay = 100
         '
         'AdressLabelGenerator
         '
@@ -210,4 +237,6 @@ Partial Class AdressLabelGenerator
     Friend WithEvents Label6 As Label
     Friend WithEvents MailingAdress As Label
     Friend WithEvents Label7 As Label
+    Friend WithEvents InputAdress As ToolTip
+    Friend WithEvents SubmissionButtons As ToolTip
 End Class
